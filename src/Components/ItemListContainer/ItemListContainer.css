@@ -1,0 +1,18 @@
+.contenedor-itemList{
+    margin-left: 72.4px;
+    padding: 2em;
+}
+
+.item{
+    display: none;
+    margin: 0;
+}
+
+img{
+    width: 300px;
+}
+
+.img-itemContainer{
+    position: relative;
+    left: calc(50% - 150px);
+}

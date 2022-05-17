@@ -1,0 +1,41 @@
+.item-img{
+    width: 300px;
+}
+
+.item-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 290px;
+    height: 720px;
+    padding: 1.5em;
+    border-radius: 1em;
+    background-color: rgb(255, 255, 255);
+}
+
+.header-text-info,
+.container-footer-info{
+    position: relative;
+    top: -5em;
+}
+
+.info-marca{
+    font-size: 3em;
+    text-align: start;
+    background-color: rgb(255, 255, 255);
+}
+
+.info-text{
+    font-size: 1.3em;
+    font-weight: 600;
+    height: 50px;
+}
+
+.container-footer-info{
+   text-align: start;
+}
+
+.info-price{
+    font-size: 2em;
+    font-weight: 700;
+}

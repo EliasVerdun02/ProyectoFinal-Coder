@@ -1,0 +1,14 @@
+.contenedor-items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 3em;
+    margin-top: 3em;
+    gap: 3em;
+    color: black;
+}
+
+h1{
+    color: white;
+    font-size: 3em;
+}
