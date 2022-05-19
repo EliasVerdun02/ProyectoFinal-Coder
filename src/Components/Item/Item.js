@@ -1,5 +1,6 @@
 import ItemCount from "../ItemCount/ItemCount"
 import '../Item/Item.css'
+import { Link } from "react-router-dom"
 
 function Item({id, title, price ,stock, pictureUrl,marca}){
 
@@ -10,7 +11,7 @@ function Item({id, title, price ,stock, pictureUrl,marca}){
                <img src={pictureUrl} className="item-img"/>
                <div className="header-text-info">
                    <p className="info-marca">{marca}</p>
-                   <p className="info-text">{title}</p>
+                   <Link to={`/detalle/${id}`} className="info-text">{title}</Link>
                </div>
             </div>
             <div className="container-footer-info">

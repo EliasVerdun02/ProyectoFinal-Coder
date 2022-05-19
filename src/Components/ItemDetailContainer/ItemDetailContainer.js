@@ -3,10 +3,11 @@ import {traerProds} from "../../funciones/funciones";
 import '../../productos/productos'
 import '../ItemDetailContainer/ItemDetailContainer.css'
 import ItemDetail from "../ItemDetail/ItemDetail";
+import { useParams } from "react-router-dom";
 
-function ItemDetailContainer({id}){
-
+function ItemDetailContainer(){
     const [item,setItem] = useState(null)
+    const {detalleId} = useParams()
 
     const filtrarProd = (productos, id) => productos.find((itemP) => itemP.id === id);
 
@@ -23,12 +24,19 @@ function ItemDetailContainer({id}){
     }
 
     useEffect(()=>{
-        getItem(id,setItem)
-    },[id])
+        getItem(Number(detalleId),setItem)
+    },[detalleId])
+
+    console.log(detalleId)
 
     return(
         <div className="container-itemDetail">
-            {item ? <ItemDetail item={item}/>  : <p className="obteniendo-producto">Obteniendo producto...</p>}
+            {item ? 
+            
+            <ItemDetail item={item}/>  
+            : 
+            
+            <p className="obteniendo-producto">Obteniendo producto...</p>}
         </div>
     )
 }

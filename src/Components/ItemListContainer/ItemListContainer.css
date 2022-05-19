@@ -12,7 +12,3 @@ img{
     width: 300px;
 }
 
-.img-itemContainer{
-    position: relative;
-    left: calc(50% - 150px);
-}

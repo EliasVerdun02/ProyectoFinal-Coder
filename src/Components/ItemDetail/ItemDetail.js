@@ -3,7 +3,7 @@ import '../ItemDetail/ItemDetail.css'
 
 
 function ItemDetail({item}){
-
+    
     
 
     return(
