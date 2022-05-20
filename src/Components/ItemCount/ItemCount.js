@@ -2,6 +2,7 @@ import { useState } from "react"
 import '../ItemCount/ItemCount.css'
 
 function ItemCount({initial,stock,onAdd}){
+
     const [valor,setValor] = useState(initial)
 
     const añadirProducto=(num)=>{

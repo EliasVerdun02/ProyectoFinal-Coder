@@ -1,10 +1,17 @@
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import ItemCount from '../ItemCount/ItemCount'
 import '../ItemDetail/ItemDetail.css'
 
 
 function ItemDetail({item}){
     
-    
+    const [valorC,setValorC] = useState(true)
+
+    const onAdd =(valor)=>{
+        setValorC(false)
+        alert(`Se agregaron ${valor} ${item.name}`)
+    }
 
     return(
         <div>
@@ -28,7 +35,15 @@ function ItemDetail({item}){
                           })
                        }
                     </ul>
-                    <ItemCount  initial={1} stock={item.stock} onAdd={   (valor)=>  alert(`Se agregaron ${valor} ${item.name}`)}/>
+                    {
+                        valorC ? 
+                        <ItemCount  initial={1} stock={item.stock} onAdd={onAdd}/>
+                        :
+                        <div className='button-cart-container'>
+                            <Link to='/cart'><button className='button-cart'>Ir al Carrito</button></Link>
+                            <Link to='/'><button className='button-cart seguir'>Seguir comprando</button></Link>
+                        </div>
+                    }
                 </div>
             </article>
         </div>

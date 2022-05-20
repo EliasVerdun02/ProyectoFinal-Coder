@@ -67,6 +67,23 @@ li:hover{
     cursor: pointer;
 }
 
+.button-cart-container{
+    text-align: center;
+    margin-top: 3em;
+    display: flex;
+    align-content: center;
+}
+
+.button-cart{
+    border: none;
+    font-size: 1.5em;
+    padding: .3em;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: .2em;
+    transition: background-color .2s ease ;
+}
+
 @media (max-width: 600px) {
 
     .details-img{

@@ -21,18 +21,6 @@ function NavBar(){
       
     },[ok, valor])
 
-    
-
-    // useEffect(()=>{
-      
-    // })
-
-    // function mostrar(){
-    //     console.log(valor)
-    //     setValor('nav__info-container nav__info-container-desplegar')
-    // }
-
-
 
     return(
         <div> 

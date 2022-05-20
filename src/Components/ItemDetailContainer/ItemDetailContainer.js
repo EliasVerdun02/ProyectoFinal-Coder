@@ -27,8 +27,6 @@ function ItemDetailContainer(){
         getItem(Number(detalleId),setItem)
     },[detalleId])
 
-    console.log(detalleId)
-
     return(
         <div className="container-itemDetail">
             {item ? 
