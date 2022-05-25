@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import {traerProds} from "../../funciones/funciones";
 import '../../productos/productos'
 import '../ItemDetailContainer/ItemDetailContainer.css'
+import '../ItemList/ItemList.css'
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
 
@@ -34,7 +35,8 @@ function ItemDetailContainer(){
             <ItemDetail item={item}/>  
             : 
             
-            <p className="obteniendo-producto">Obteniendo producto...</p>}
+            <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
+            }
         </div>
     )
 }

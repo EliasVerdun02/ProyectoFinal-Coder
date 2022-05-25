@@ -3,11 +3,11 @@ import { Link } from "react-router-dom"
 
 function CartWidget(){
     return(
-        <a href="#!" className="marcas__item item-cart">
+        <i className="marcas__item item-cart">
        
                <RiShoppingCartFill/>
             
-        </a>
+        </i>
     )
 }
 

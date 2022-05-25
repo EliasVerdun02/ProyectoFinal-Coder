@@ -41,7 +41,7 @@ function ItemList(){
                 
                 :
                 
-                   <h1>Cargando...</h1>
+                <div className="lds-ring"><div></div><div></div><div></div><div></div></div> //Loader
                 
             }
         </div>

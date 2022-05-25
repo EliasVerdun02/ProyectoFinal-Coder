@@ -1,7 +1,7 @@
 import { useState } from "react"
 import '../ItemCount/ItemCount.css'
 
-function ItemCount({initial,stock,onAdd}){
+function ItemCount({initial,stock,onAdd,talle}){
 
     const [valor,setValor] = useState(initial)
 
@@ -16,7 +16,7 @@ function ItemCount({initial,stock,onAdd}){
                <p>{valor}</p>
                <button onClick={()=> añadirProducto(1)} disabled={stock === valor} className="button button-mas">+</button>
             </div>
-            <button onClick={()=> onAdd(valor)} className="button-agregar">Agregar al carrito</button>
+            <button onClick={()=> onAdd(valor)} disabled={talle === null} className="button-agregar">Agregar al carrito</button>
         </div>
         )
 }

@@ -36,7 +36,7 @@ function NavBar(){
 
             <nav className="nav"> 
               <div className='nav__marcas-container'>
-                <CartWidget/>
+                <Link to='/cart'><CartWidget/></Link>
                 <Link to='/categoria/nike' className='marcas__item'><SiNike/></Link>
                 <Link to='/categoria/adidas' className='marcas__item'><SiAdidas/></Link>
                 <div className="boton">

@@ -6,7 +6,7 @@ import {SiAdidas} from "react-icons/si";
 export const productList = [
     {
       name: 'ZAPATILLAS NIKE AIR FORCE 1 07 LV8',
-      price: '$25.299',
+      price: 25.299,
       img:
         'https://essential.vteximg.com.br/arquivos/ids/549444-1000-1000/316-0279_1.jpg?v=637861334569100000',
       stock: 7,
@@ -18,7 +18,7 @@ export const productList = [
     },
     {
       name: 'ZAPATILLAS ADIDAS ORIGINALS OZELIA',
-      price: '$26.999',
+      price: 26.999,
       img:
         'https://essential.vteximg.com.br/arquivos/ids/553794-1000-1000/261-3166_1.jpg?v=637871215089000000',
       stock: 5,
@@ -30,7 +30,7 @@ export const productList = [
     },
     {
       name: 'ZAPATILLAS PUMA FUTURE RIDER',
-      price: '$17.500',
+      price: 17.599,
       img:
         'https://essential.vteximg.com.br/arquivos/ids/553693-1000-1000/961-3326_1.jpg?v=637871214661500000',
       stock: 6,
@@ -42,7 +42,7 @@ export const productList = [
     },
     {
       name: 'ZAPATILLAS JORDAN AIR 1',
-      price: '$32.550',
+      price: 35.459,
       img:
         'https://essential.vteximg.com.br/arquivos/ids/511932-1000-1000/316-0236_1.jpg?v=637782130249630000',
       stock: 6,
@@ -54,7 +54,7 @@ export const productList = [
     },
     {
       name: 'ZAPATILLAS NIKE AIR FORCE 1 07 LV8',
-      price: '$27.499',
+      price: 27.499,
       img:
         'https://essential.vteximg.com.br/arquivos/ids/555006-1000-1000/316-0397_1.jpg?v=637872772213230000',
       stock: 3,
@@ -66,7 +66,7 @@ export const productList = [
     },
     {
       name: 'ZAPATILLAS ADIDAS SABALO',
-      price: '$12.999',
+      price: 12.999,
       img:
         'https://essential.vteximg.com.br/arquivos/ids/363611-1000-1000/261-1449_1.jpg?v=637389909149230000',
       stock: 10,
@@ -78,7 +78,7 @@ export const productList = [
     },
     {
       name: 'ZAPATILLAS PUMA X RAY SQUARE',
-      price: '$15.499',
+      price: 15.499,
       img:
         'https://essential.vteximg.com.br/arquivos/ids/521997-1000-1000/961-9194_1.jpg?v=637801036625870000',
       stock: 2,
@@ -90,7 +90,7 @@ export const productList = [
     },
     {
       name: 'BOTITAS JORDAN AIR 12 RETRO',
-      price: '$49.499',
+      price: 49.499,
       img:
         'https://essential.vteximg.com.br/arquivos/ids/555105-1000-1000/316-6248_1.jpg?v=637872772684400000',
       stock: 8,

@@ -1,8 +1,7 @@
 .brand-logo{
-    width: 300px;
-    position: relative;
-    margin-right: auto;
-    margin-left: auto;
-    top: 2.5em;
-    left: 50px;
+    margin-left:72.4px;
+    text-align: center;
+}
+.brand-logo img{
+    margin-top: 2.5em;
 }
