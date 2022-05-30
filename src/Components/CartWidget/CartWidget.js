@@ -1,13 +1,23 @@
 import {RiShoppingCartFill} from "react-icons/ri"
-import { Link } from "react-router-dom"
+import '../CartWidget/CartWidget.css'
+import { useCartContext } from "../../context/CartContext"
 
 function CartWidget(){
+
+    const {cantidadTotal} = useCartContext()
+
     return(
-        <i className="marcas__item item-cart">
+        <div className="item-cart-container">
        
-               <RiShoppingCartFill/>
-            
-        </i>
+        <RiShoppingCartFill className="icon-cart"/>
+        {
+            cantidadTotal()?
+        <p className="number-item">{cantidadTotal()} </p>
+        :
+        <p></p>
+        }    
+
+        </div>
     )
 }
 

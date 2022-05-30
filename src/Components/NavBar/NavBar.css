@@ -39,11 +39,6 @@ body{
     transition: color .15s ease;
 }
 
-.item-cart{
-   position: relative;
-   top: -3.5em;
-}
-
 .marcas__item:hover{
     color: #ffffff;
 }

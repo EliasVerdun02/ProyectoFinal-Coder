@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {useState } from "react";
 import {SiNike} from "react-icons/si";
 import {SiPuma} from "react-icons/si";
 import {SiJordan} from "react-icons/si";
@@ -6,33 +6,26 @@ import {SiAdidas} from "react-icons/si";
 import { Link } from "react-router-dom";
 import CartWidget from "../CartWidget/CartWidget";
 import './NavBar.css'
-// import './script.js'
+
 
 function NavBar(){
-    const [valor, setValor] = useState('nav__info-container')
     const [ok,setOk] = useState(false)
 
     const mostrar=()=>{
        setOk(!ok)
     }
 
-    useEffect(()=>{
-      ok ? setValor(valor + ' nav__info-container-desplegar') : setValor('nav__info-container')
-      
-    },[ok, valor])
-
-
     return(
         <div> 
 
-            <header>
-               <div className={valor}>
+            <div>
+               <div className={ok ? 'nav__info-container nav__info-container-desplegar' : 'nav__info-container'}>
                 <a href="#1" className='info__item'>SALE</a>
                 <a href="#1" className='info__item'>NEW IN</a>
                 <a href="#1" className='info__item'>HOMBRE</a>
                 <a href="#1" className='info__item'>MUJER</a>
                </div>      
-            </header>
+            </div>
 
             <nav className="nav"> 
               <div className='nav__marcas-container'>

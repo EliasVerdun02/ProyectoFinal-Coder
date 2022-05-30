@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import {traerProds} from "../../funciones/funciones";
-import '../../productos/productos'
+// import '../../productos/productos'
 import '../ItemDetailContainer/ItemDetailContainer.css'
 import '../ItemList/ItemList.css'
 import ItemDetail from "../ItemDetail/ItemDetail";

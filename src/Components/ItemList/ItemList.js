@@ -1,11 +1,12 @@
-import { useEffect, useState } from "react"
+import { memo, useEffect, useState } from "react"
 import '../../productos/productos'
 import { traerProds } from "../../funciones/funciones"
 import Item from "../Item/Item"
 import '../ItemList/ItemList.css'
 import { useParams } from "react-router-dom"
 
-function ItemList(){
+const ItemList = memo( 
+    ()=>{
     const [prods,setProds] = useState([])
 
     const {categoriaId} = useParams()
@@ -48,5 +49,6 @@ function ItemList(){
     )
     
 }
-
+// (oldProps, newProps) => oldProps.prods.length === newProps.prods.length //Si es false re-render
+)
 export default ItemList
