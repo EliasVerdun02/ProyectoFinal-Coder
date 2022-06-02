@@ -1,65 +1,130 @@
 .cart{
     position: relative;
     top: 2em;
-    left: calc(50% - 140px);
-    margin-bottom: 5em;
+    margin-left:72.4px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 350px;
-    color: rgb(0, 0, 0);
-    background-color: rgba(250, 249, 249, 0.863);
+    color: rgb(255, 255, 255);
+    
 }
 
 .text-carrito{
-    align-self: center;
-    font-size: 1.8em;
-    padding: .2em .5em;
-    color: rgb(0, 0, 0);
+    font-size: 2em;
+    padding: .7em 0;
+    text-align: center;
+    border-bottom: 2px solid white;
+    color: rgb(255, 255, 255);
+    width: 700px;
 }
 
+.extends{
+    transition: all .5s ease;
+    color: #fdc526;
+    border-bottom: 2px solid #fdc526;
+}
+
+
+
 .prod-cart{
+    display: flex;
+    font-size: 1.1em;
     margin-bottom: 2em;
-    position: relative;
-    text-align: center;
-    border-bottom: 2px solid black;
+    padding: .5em 1em;
 }
 
 .prod-cart img{
-    box-shadow:  0 0 9px 5px rgba(0, 0, 0, 0.644);
+    width: 150px;
+    border-radius: 50%;
 }
 
 .cart-text{
-    width: 300px;
+    display: flex;
+    padding: 0 1.5em;
+    align-items: center;
+    gap: 1.5em;
 }
 
-.cart-text p{
-    font-size: 1.2em;
+.cart-text-cant{
+    text-align: center;
+}
+
+.section-text{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+
+
+.section-title{
+    color: rgba(228, 228, 228, 0.651);
+}
+
+.cart-text-name{
+    width: 200px;
 }
 
 .delete-button{
     background: none;
     border: none;
+    color: grey;
     font-size: 2.5em;
-    position: absolute;
-    left: -.2em;
+    margin-top: .2em;
     cursor: pointer;
+    transition: color .2s ease;
+}
+
+.delete-button:hover{
+    color: rgb(255, 255, 255);
 }
 
 .button-vaciar{
+    border: none;
+    background: none;
     font-size: 1.5em;
-    margin-bottom: 1.5em;
-    padding: .2em .5em;
+    margin: 1.5em 0;
     cursor: pointer;
+    color: rgb(255, 255, 255);
+    transition: opacity .2s ease;
+}
+
+.button-vaciar:hover{
+    opacity: .75;
+}
+
+.button-vaciar span{
+    vertical-align: middle;
+    font-size: 1.2em;
 }
 
 .home-button{
     margin-top: 1em;
-    font-size: 1.2em;
-    color: black;
+    font-size: 1.7em;
+    color: rgba(255, 255, 255, 0.856);
     text-decoration: none;
+}
+
+.home-button span{
+    margin-right: .3em;
+    vertical-align: middle;
 }
 
 .home-button:hover{
     opacity: .75;
+}
+
+.section-total{
+    display: flex;
+    gap: .5em;
+    font-size: 2em;
+}
+
+.section-total-valor{
+    font-weight: 600;
+}
+
+.extends-text{
+    transition: all .5s ease;
+    color: #fdc526;;
 }

@@ -7,7 +7,7 @@
     flex-direction: column;
     justify-content: space-between;
     width: 290px;
-    height: 720px;
+    height: 500px;
     padding: 1.5em;
     border-radius: 1em;
     background-color: rgb(255, 255, 255);
@@ -17,10 +17,9 @@
     box-shadow: 0 0 8px 5px rgba(255, 255, 255, 0.308);
 }
 
-.header-text-info,
-.container-footer-info{
+.header-text-info{
     position: relative;
-    top: -5em;
+    top: -7em;
 }
 
 .info-marca{
@@ -32,11 +31,12 @@
 .info-text{
     font-size: 1.5em;
     font-weight: 600;
-    color: black;
+   
     text-decoration: none;
     display: block;
     height: 50px;
-    cursor: pointer;
+    cursor: pointer; 
+    color: black;
     transition: font-size .2s ease;
 }
 
@@ -49,6 +49,7 @@
 }
 
 .info-price{
+    margin-top: -1.8em;
     font-size: 2em;
     font-weight: 700;
 }

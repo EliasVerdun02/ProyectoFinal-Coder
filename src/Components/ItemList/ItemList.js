@@ -1,8 +1,9 @@
 import { memo, useEffect, useState } from "react"
 import '../../productos/productos'
-import { traerProds } from "../../funciones/funciones"
 import Item from "../Item/Item"
+import {getFirestore, collection, getDocs , query, where} from 'firebase/firestore'
 import '../ItemList/ItemList.css'
+
 import { useParams } from "react-router-dom"
 
 const ItemList = memo( 
@@ -11,16 +12,28 @@ const ItemList = memo(
 
     const {categoriaId} = useParams()
 
+
+
     useEffect(()=>{
+        const db = getFirestore()
+        const queryCollection = collection(db,'productos')
+
         if(categoriaId){
-            traerProds
-            .then((res)=> setProds(res.filter((productos)=> productos.categoria === categoriaId)))
+            const queryCollectionFilter = query(queryCollection, where('categoria', '==', categoriaId))
+            getDocs(queryCollectionFilter)
+            .then(resp => setProds( resp.docs.map(producto => ({id: producto.id, ...producto.data()}) )))
+            .catch(err => console.log(err))
         }else{
-            traerProds
-            .then((res)=> setProds(res))
+            const db = getFirestore()
+
+            const queryCollection = collection(db,'productos')
+            getDocs(queryCollection)
+            .then(resp => setProds( resp.docs.map(producto => ({id: producto.id, ...producto.data()}) )))
+            .catch(err => console.log(err))
         }
-        
+
     },[categoriaId])
+
 
     return(
         <div className="contenedor-items">
