@@ -11,7 +11,7 @@ function Item({id, title, price ,stock, pictureUrl,marca}){
             <div className="container-header-info">
                <img src={pictureUrl} className="item-img"/>
                <div className="header-text-info">
-                   <p className="info-marca">{marca}</p>
+                   <img src={marca} className="info-marca"></img>
                    <Link to={`/detalle/${id}`} className="info-text">{title}</Link>
                </div>
             </div>

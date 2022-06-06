@@ -23,15 +23,14 @@
 }
 
 .info-marca{
-    font-size: 3em;
-    text-align: start;
-    background-color: rgb(255, 255, 255);
+    margin-top: 2em;
+    margin-bottom: 1em;
+    width: 70px;
 }
 
 .info-text{
     font-size: 1.5em;
     font-weight: 600;
-   
     text-decoration: none;
     display: block;
     height: 50px;

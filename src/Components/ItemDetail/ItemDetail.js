@@ -26,12 +26,12 @@ function ItemDetail({item}){
                 <img src={item.img} className="details-img"></img>
                 <div className='container-info-details'>
                    <div className='info-name-marca'>
-                      <p className='info-marca-details'>{item.marca}</p>
+                      <img src={item.marca} className='info-marca-details'></img>
                       <p className='info-name-details'>{item.name}</p>
                    </div>
-                   <p className='info-price-details'>{item.price}</p>
+                   <p className='info-price-details'>${item.price}</p>
 
-                   <p className='info-envio-details'>{item.envio}</p>
+                   <p className='info-envio-details'>Envio Gratis</p>
                    <p className='info-talle-details'>Elegi tu talle ARG</p>
                    <ul className='item-detalle'>
                        {

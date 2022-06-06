@@ -6,10 +6,14 @@ import '../Cart/Cart.css'
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
+
 function Cart(){
 
     const [ok,setOk] = useState(true)
-    const {cartList,vaciarCarrito,deleteProdCart,precioTotal} = useCartContext()
+    const {cartList,vaciarCarrito,deleteProdCart,precioTotal,generarOrden} = useCartContext()
+
+
+
 
     useEffect(()=>{
         setTimeout(() => {
@@ -59,6 +63,7 @@ function Cart(){
             <section className='section-total'>
                 <p className='section-title'>TOTAL</p>
                 <p className='section-total-valor'>${precioTotal()}</p>
+                <p className='section-comprar' onClick={()=>generarOrden()}>Comprar</p>
             </section>:
             <p></p>
             }
