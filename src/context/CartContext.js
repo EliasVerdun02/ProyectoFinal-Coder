@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from "react";
-import {addDoc, collection, getFirestore} from 'firebase/firestore'
+
+import {addDoc, collection, getFirestore} from 'firebase/firestore';
 
 const CartContext = createContext([])
 
@@ -9,19 +10,19 @@ const CartContextProvider = ({children})=>{
 
      const [cartList, setCartList] = useState([])
 
-     function addToCart(productoNuevo){
-        if(cartList.some((prodCart) => prodCart.id === productoNuevo.id)){
+     function addToCart(newProduct){
+        if(cartList.some((prodCart) => prodCart.id === newProduct.id)){
             const cart = [...cartList]
-            cart.forEach((prodPresente)=>{
-                if(prodPresente.id === productoNuevo.id){
-                    prodPresente.cantidad += productoNuevo.cantidad
+            cart.forEach((prodPresent)=>{
+                if(prodPresent.id === newProduct.id){
+                    prodPresent.quantity += newProduct.quantity
                 }
             })
             setCartList([...cart])
         }else{
             setCartList([
                 ...cartList,
-                productoNuevo
+                newProduct
             ])
         }
          
@@ -29,49 +30,50 @@ const CartContextProvider = ({children})=>{
 
      const deleteProdCart = (id) => {
         const cart = [...cartList];
-        let index = cart.findIndex((prodEliminar) => prodEliminar.id === id);
+        let index = cart.findIndex((prodRemove) => prodRemove.id === id);
     
         cart.splice(index, 1);
     
         setCartList([...cart]);
       };
 
-     const vaciarCarrito = ()=>{
+     const removeCart = ()=>{
          setCartList([])
      }
 
-     const precioTotal =()=>{
-         return cartList.reduce((cont, producto)=> (cont += producto.cantidad * producto.price.toFixed(3)), 0)
+     const totalPrice =()=>{
+         return cartList.reduce((cont, product)=> (cont += product.quantity * product.price), 0)
      }
 
 
-     const cantidadTotal =()=>{
-         return cartList.reduce((cont, producto)=> cont += producto.cantidad, 0)
+     const quantityTotal =()=>{
+         return cartList.reduce((cont, product)=> cont += product.quantity, 0)
      }
 
-     //Procedimiento de compra
 
-     async function generarOrden(){
+     async function generateOrder(dataUser){
         
-        let orden = {}
+        let order = {}
 
-        orden.buyer = {name:'Elias',email:'e@gmail.com',phone:'1139089244'}
-        orden.date = Date()
-        orden.total = precioTotal()
+        order.buyer = {dataUser}
+        order.date = Date()
+        order.total = totalPrice()
 
-        orden.items = cartList.map(cartItem => {
+        order.items = cartList.map(cartItem => {
             const id = cartItem.id
             const name = cartItem.name
             const price = cartItem.price
-            const cantidad = cartItem.cantidad
+            const quantity = cartItem.quantity
 
-            return {id,name,price,cantidad}
+            return {id,name,price,quantity}
         })
 
         const db = getFirestore()
         const queryCollection = collection(db, 'orders')
-        addDoc(queryCollection, orden)
-        .finally(()=> vaciarCarrito())
+        addDoc(queryCollection, order)
+        .then(({id})=> alert(`Su pedido fue enviado con exito! Su Numero de orden es: ${id}`))
+        .catch((err)=> console.log(err))
+        .finally(()=> removeCart())
     } 
 
     return(
@@ -79,10 +81,10 @@ const CartContextProvider = ({children})=>{
             cartList,
             addToCart,
             deleteProdCart,
-            vaciarCarrito,
-            precioTotal,
-            cantidadTotal,
-            generarOrden
+            removeCart,
+            totalPrice,
+            quantityTotal,
+            generateOrder
         }}>
             {children}
         </CartContext.Provider>

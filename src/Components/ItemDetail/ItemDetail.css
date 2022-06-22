@@ -6,14 +6,14 @@
     margin-right: auto;
     margin-left: auto;
     padding: 1.5em;
-    width: 850px;
+    width: 900px;
     height: 565px;
     border-radius: 1em;
     background-color: rgb(255, 255, 255);
 }
 
 .details-img{
-    width: 500px;
+    width: auto;
 }
 
 .info-name-details{
@@ -22,7 +22,7 @@
     font-weight: 600;
 }
 
-.info-marca-details{
+.info-brand-details{
     width: 70px;
 }
 
@@ -32,7 +32,7 @@
     margin: .5em  0;
 }
 
-.info-envio-details{
+.info-send-details{
     background-color: black;
     color: white;
     display: inline;
@@ -40,17 +40,8 @@
     font-size: 1.2em;
 }
 
-.info-talle-details{
+.info-size-details{
     font-size: 1.5em;
-}
-
-
-.item-detalle{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1em;
-    margin-left: -2.5em;
-    list-style: none;
 }
 
 .button-cart-container{
@@ -61,63 +52,40 @@
     justify-content: space-between;
 }
 
-.button-cart{
+.button-detail-cart{
     font-size: 1.3em;
     width: 140px;
     height: 70px;
     cursor: pointer;
-    border: 2px solid black;
     border-radius: .2em;
     background-color: black;
     color: white;
     transition: background-color .2s ease ;
 }
 
-.seguir{
+.button-cart{
     background-color: #fdc526;
     color: black;
     border: none;
 }
 
-.container-talles{
-    position: relative;
-}
 
-.input{
-    z-index: 1;
-    position: absolute;
-    left: -11px;
-    top: -2px;
-    opacity: 0;
-    width: 55px;
-    height: 30px;
-    cursor: pointer;
-}
-
-.label{
-    border: 2px solid black;
-    width: 38px;
-    height: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color .1s ease;
-}
-
-.input:checked + .label{
-    background-color: black;
-    color: white;
-}
 
 @media (max-width: 600px) {
 
     .details-img{
-        width: 300px;
+        width: 200px;
     }
 
     .container-details{
-        width: 300px;
+        margin-top: 8em;
         flex-direction: column;
-        width: 290px;
+        width: 200px;
+        height: auto;
+    }
+
+    .button-cart-container{
+        flex-direction: column;
+        gap: 1.5em;
     }
 }

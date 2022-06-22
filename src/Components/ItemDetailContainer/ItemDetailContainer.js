@@ -1,30 +1,38 @@
 import { useEffect, useState } from "react";
-import '../ItemDetailContainer/ItemDetailContainer.css'
-import '../ItemList/ItemList.css'
-import ItemDetail from "../ItemDetail/ItemDetail";
-import {getFirestore, doc, getDoc} from 'firebase/firestore'
+import {getFirestore, doc, getDoc} from 'firebase/firestore';
 import { useParams } from "react-router-dom";
 
-function ItemDetailContainer(){
-    const [item,setItem] = useState(null)
-    const {detalleId} = useParams()
+import ItemDetail from "../ItemDetail/ItemDetail";
+import Loader from "../Loader/Loader";
 
+import '../ItemDetailContainer/ItemDetailContainer.css';
+import '../ItemList/ItemList.css';
+
+
+function ItemDetailContainer(){
+
+    const [item,setItem] = useState(null)
+    const {detailId} = useParams()
 
     useEffect(()=>{
+
         const db = getFirestore()
-        const dbQuery = doc(db, 'productos', detalleId)
+        const dbQuery = doc(db, 'productos', detailId)
         getDoc(dbQuery)
         .then(resp => setItem({id: resp.id, ...resp.data()}))
-    },[detalleId])
+        
+    },[detailId])
 
     return(
-        <div className="container-itemDetail">
-            {item ? 
+        <div className="container-item-detail">
+            {
+            item ? 
             
             <ItemDetail item={item}/>  
+
             : 
             
-            <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
+            <Loader/>
             }
         </div>
     )

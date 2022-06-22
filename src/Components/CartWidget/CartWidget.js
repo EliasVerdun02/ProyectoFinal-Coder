@@ -4,15 +4,15 @@ import { useCartContext } from "../../context/CartContext"
 
 function CartWidget(){
 
-    const {cantidadTotal} = useCartContext()
+    const {quantityTotal} = useCartContext()
 
     return(
         <div className="item-cart-container">
        
         <RiShoppingCartFill className="icon-cart"/>
         {
-            cantidadTotal()?
-        <p className="number-item">{cantidadTotal()} </p>
+            quantityTotal()?
+        <p className="number-item">{quantityTotal()} </p>
         :
         <p></p>
         }    

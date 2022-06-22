@@ -5,3 +5,10 @@
 .brand-logo img{
     margin-top: 2.5em;
 }
+
+@media (max-width: 600px) {
+
+    .brand-logo img{
+        width: 230px; 
+    }
+}

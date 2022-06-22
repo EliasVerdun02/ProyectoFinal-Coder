@@ -22,7 +22,7 @@
     top: -7em;
 }
 
-.info-marca{
+.info-brand{
     margin-top: 2em;
     margin-bottom: 1em;
     width: 70px;
@@ -51,4 +51,28 @@
     margin-top: -1.8em;
     font-size: 2em;
     font-weight: 700;
+}
+
+
+@media (max-width: 600px) {
+
+    .item-img{
+        width: 200px;
+    }
+    
+    .item-info{
+        display: flex;
+        width: 200px;
+        height: 400px;
+    }
+    
+    .info-brand{
+        margin-top: 5em;
+        margin-bottom: 1em;
+        width: 40px;
+    }
+
+    .info-price{
+        margin-top: -1em;
+    }
 }

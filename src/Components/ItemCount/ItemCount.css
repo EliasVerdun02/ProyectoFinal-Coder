@@ -39,15 +39,15 @@
 
 
 
-.button-agregar{
+.button-add{
     border: none;
     font-size: .8em;
     padding: .3em;
     cursor: pointer;
     outline: 2px solid black;
-    transition: background-color .2s ease ;
+    transition: background-color .2s ease;
 }
 
-.button-agregar:hover{
+.button-add:hover{
     background-color: rgba(0, 0, 0, 0.226);
 }

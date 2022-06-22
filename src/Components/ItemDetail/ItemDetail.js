@@ -1,57 +1,52 @@
-import {useState } from 'react'
-import { Link } from 'react-router-dom'
-import { useCartContext } from '../../context/CartContext'
+import {useState } from 'react';
+import { Link } from 'react-router-dom';
 
-import ItemCount from '../ItemCount/ItemCount'
-import '../ItemDetail/ItemDetail.css'
+import { useCartContext } from '../../context/CartContext';
+
+import ItemCount from '../ItemCount/ItemCount';
+import Sizes from '../Sizes/Sizes';
+
+import '../ItemDetail/ItemDetail.css';
+
+
 
 
 function ItemDetail({item}){
     
-    const [valorC,setValorC] = useState(true)
-    const [talle,setTalle] = useState(null)
+    const [render,setRender] = useState(true)
+    const [size,setSize] = useState(null)
  
     const {addToCart} = useCartContext()
 
-    const onAdd =(valor)=>{
-        setValorC(false)
-        addToCart({...item, cantidad: valor}) 
-        alert(`Se agregaron ${valor} ${item.name} en talle ${talle}`)
+    const onAdd =(value)=>{
+        setRender(false)
+        addToCart({...item, quantity: value}) 
+        alert(`Se agregaron ${value} ${item.name} en talle ${size}`)
     }
 
 
     return(
         <div>
             <article className='container-details'>
-                <img src={item.img} className="details-img"></img>
+                <img src={item.img} alt='' className="details-img"></img>
                 <div className='container-info-details'>
-                   <div className='info-name-marca'>
-                      <img src={item.marca} className='info-marca-details'></img>
+                   <div>
+                      <img src={item.brand} alt='' className='info-brand-details'></img>
                       <p className='info-name-details'>{item.name}</p>
                    </div>
                    <p className='info-price-details'>${item.price}</p>
 
-                   <p className='info-envio-details'>Envio Gratis</p>
-                   <p className='info-talle-details'>Elegi tu talle ARG</p>
-                   <ul className='item-detalle'>
-                       {
-                          item.talles.map((item) => {
-                            return(
-                                <div key={item} className='container-talles'>
-                                <input type='radio' name='talle' value={item} className='input' onClick={()=> setTalle(item)}/>
-                                <label  className='label' >{item}</label>
-                                </div>
-                            )
-                          })
-                       }
-                    </ul>
+                   <p className='info-send-details'>Envio Gratis</p>
+                   <p className='info-size-details'>Elegi tu talle ARG</p>
+                   <Sizes sizes={item.sizes} setSize={setSize} />
+                   
                     {
-                        valorC ? 
-                        <ItemCount  initial={1} stock={item.stock} onAdd={onAdd} talle={talle} />
+                        render ? 
+                        <ItemCount  initial={1} stock={item.stock} onAdd={onAdd} size={size} />
                         :
                         <div className='button-cart-container'>
-                            <Link to='/cart'><button className='button-cart seguir'>Ir al Carrito</button></Link>
-                            <Link to='/'><button className='button-cart '>Seguir comprando</button></Link>
+                            <Link to='/cart'><button className='button-detail-cart button-cart '>Ir al Carrito</button></Link>
+                            <Link to='/'><button className='button-detail-cart'>Seguir comprando</button></Link>
                         </div>
                     }
                 </div>
